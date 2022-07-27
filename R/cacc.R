@@ -7,9 +7,9 @@
 #' @param y Name of the dependent variable, without quotes. Variable must be dichotomous with values 0 (absence) and 1 (presence).
 #'
 #' @return Returns a tibble with the CACC matrix.
-#' @export
 #'
 #' @importFrom rlang .data
+#' @export
 #'
 #' @examples
 #' cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1)
