@@ -52,9 +52,10 @@ cacc <- function (data, x, y) {
     )) |>
     dplyr::arrange(dplyr::desc(.data$p)) |>
     dplyr::select(- .data$freq_one) |>
-    dplyr::rename(freq = "freq_total")
+    dplyr::rename(freq = "freq_total") |>
+    dplyr::mutate(p = tidyr::replace_na(.data$p, 0))
 
   # Return the CACC matrix ----
-  return(cacc_matrix)
+  return (cacc_matrix)
 
 }
