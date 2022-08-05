@@ -15,7 +15,7 @@
 #'   cacc_matrix = cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1),
 #'   variable = iv4,
 #'   value = 0
-#')
+#' )
 
 main_effect <- function (cacc_matrix, variable, value) {
 
