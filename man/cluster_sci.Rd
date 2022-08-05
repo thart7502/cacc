@@ -7,7 +7,7 @@
 cluster_sci(cacc_matrix)
 }
 \arguments{
-\item{cacc_matrix}{A tibble. The output from the \code{cacc} function.}
+\item{cacc_matrix}{A tibble. The output of the \code{cacc} function.}
 }
 \value{
 Returns a numeric value.
@@ -16,5 +16,5 @@ Returns a numeric value.
 Computes a Situational Clustering Index (SCI) to quantify the magnitude of the clustering of observations among dominant profiles in a \code{cacc_matrix}.
 }
 \examples{
-cluster_sci(cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1))
+cluster_sci(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 }

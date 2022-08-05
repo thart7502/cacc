@@ -4,14 +4,14 @@
 \alias{cacc}
 \title{Conjunctive Analysis of Case Configurations}
 \usage{
-cacc(data, x, y)
+cacc(data, ivs, dv)
 }
 \arguments{
 \item{data}{A data frame or a tibble.}
 
-\item{x}{A vector of names of the independent variables, without quotes. Variables must be categorical, either integer, character, or factor.}
+\item{ivs}{A vector of names of the independent variables, without quotes. Variables must be categorical, either integer, character, or factor.}
 
-\item{y}{Name of the dependent variable, without quotes. Variable must be dichotomous with values 0 (absence) and 1 (presence).}
+\item{dv}{Name of the dependent variable, without quotes. Variable must be dichotomous with values 0 (absence) and 1 (presence).}
 }
 \value{
 Returns a tibble with the CACC matrix.
@@ -20,6 +20,6 @@ Returns a tibble with the CACC matrix.
 Computes a Conjunctive Analysis of Case Configurations (CACC).
 }
 \examples{
-cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1)
-cacc(data = test_data, x = c(iv1_c, iv2_c, iv3_c, iv4_c), y = dv1)
+cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1)
+cacc(data = test_data, ivs = c(iv1_c, iv2_c, iv3_c, iv4_c), dv = dv1)
 }

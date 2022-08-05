@@ -2,14 +2,14 @@
 #'
 #' @description Computes a Situational Clustering Index (SCI) to quantify the magnitude of the clustering of observations among dominant profiles in a `cacc_matrix`.
 #'
-#' @param cacc_matrix A tibble. The output from the `cacc` function.
+#' @param cacc_matrix A tibble. The output of the `cacc` function.
 #'
 #' @return Returns a numeric value.
 #'
 #' @export
 #'
 #' @examples
-#' cluster_sci(cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1))
+#' cluster_sci(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 
 cluster_sci <- function (cacc_matrix) {
 

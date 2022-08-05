@@ -7,7 +7,7 @@
 cluster_xsq(cacc_matrix)
 }
 \arguments{
-\item{cacc_matrix}{A tibble. The output from the \code{cacc} function.}
+\item{cacc_matrix}{A tibble. The output of the \code{cacc} function.}
 }
 \value{
 Returns a list with the Chi-square results. This is the same object returned by the \code{chisq.test} function from the \code{stats} package.
@@ -16,5 +16,5 @@ Returns a list with the Chi-square results. This is the same object returned by 
 Computes a Chi-Square Goodness-of-Fit Test to determine whether there is statistically significant clustering of observations among dominant profiles in a \code{cacc_matrix}.
 }
 \examples{
-cluster_xsq(cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1))
+cluster_xsq(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 }

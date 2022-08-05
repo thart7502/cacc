@@ -2,16 +2,16 @@
 #'
 #' @description Plots a Lorenz Curve for the Situational Clustering Index (SCI) to visualize the magnitude of the clustering of observations among dominant profiles in a `cacc_matrix`.
 #'
-#' @param cacc_matrix A tibble. The output from the `cacc` function.
+#' @param cacc_matrix A tibble. The output of the `cacc` function.
 #'
 #' @return Returns a ggplot object.
 #'
 #' @export
 #'
 #' @examples
-#' plot_sci(cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1))
+#' plot_sci(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 
-plot_sci <- function(cacc_matrix) {
+plot_sci <- function (cacc_matrix) {
 
   # Prepare the data frame ----
   cacc_matrix <- cacc_matrix |>
@@ -39,7 +39,7 @@ plot_sci <- function(cacc_matrix) {
     )
 
   # Plot the Lorenz curve ----
-  cacc_matrix |>
+  plot_lorenz <- cacc_matrix |>
     ggplot2::ggplot(mapping = ggplot2::aes(
       x = .data$prop_config,
       y = .data$prop_cum
@@ -59,5 +59,7 @@ plot_sci <- function(cacc_matrix) {
       x = "Proportion of observations",
       y = "Proportion of dominant profiles"
     )
+
+  return (plot_lorenz)
 
 }

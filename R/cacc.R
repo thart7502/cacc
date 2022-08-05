@@ -3,8 +3,8 @@
 #' @description Computes a Conjunctive Analysis of Case Configurations (CACC).
 #'
 #' @param data A data frame or a tibble.
-#' @param x A vector of names of the independent variables, without quotes. Variables must be categorical, either integer, character, or factor.
-#' @param y Name of the dependent variable, without quotes. Variable must be dichotomous with values 0 (absence) and 1 (presence).
+#' @param ivs A vector of names of the independent variables, without quotes. Variables must be categorical, either integer, character, or factor.
+#' @param dv Name of the dependent variable, without quotes. Variable must be dichotomous with values 0 (absence) and 1 (presence).
 #'
 #' @return Returns a tibble with the CACC matrix.
 #'
@@ -12,15 +12,15 @@
 #' @export
 #'
 #' @examples
-#' cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1)
-#' cacc(data = test_data, x = c(iv1_c, iv2_c, iv3_c, iv4_c), y = dv1)
+#' cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1)
+#' cacc(data = test_data, ivs = c(iv1_c, iv2_c, iv3_c, iv4_c), dv = dv1)
 
-cacc <- function (data, x, y) {
+cacc <- function (data, ivs, dv) {
 
   # Generate the CACC matrix ----
   # Count all profiles
   matrix_total <- data |>
-    dplyr::group_by(dplyr::across({{ x }})) |>
+    dplyr::group_by(dplyr::across({{ ivs }})) |>
     dplyr::count() |>
     dplyr::ungroup() |>
     dplyr::arrange(dplyr::desc(.data$n)) |>
@@ -28,8 +28,8 @@ cacc <- function (data, x, y) {
 
   # Count profiles associated with presence of the DV
   matrix_one <- data |>
-    dplyr::filter({{ y }} == 1) |>
-    dplyr::group_by(dplyr::across({{ x }})) |>
+    dplyr::filter({{ dv }} == 1) |>
+    dplyr::group_by(dplyr::across({{ ivs }})) |>
     dplyr::count() |>
     dplyr::ungroup() |>
     dplyr::arrange(dplyr::desc(.data$n)) |>

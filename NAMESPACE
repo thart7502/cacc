@@ -3,5 +3,6 @@
 export(cacc)
 export(cluster_sci)
 export(cluster_xsq)
+export(main_effect)
 export(plot_sci)
 importFrom(rlang,.data)

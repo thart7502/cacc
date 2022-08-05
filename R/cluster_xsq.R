@@ -2,14 +2,14 @@
 #'
 #' @description Computes a Chi-Square Goodness-of-Fit Test to determine whether there is statistically significant clustering of observations among dominant profiles in a `cacc_matrix`.
 #'
-#' @param cacc_matrix A tibble. The output from the `cacc` function.
+#' @param cacc_matrix A tibble. The output of the `cacc` function.
 #'
 #' @return Returns a list with the Chi-square results. This is the same object returned by the `chisq.test` function from the `stats` package.
 #'
 #' @export
 #'
 #' @examples
-#' cluster_xsq(cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1))
+#' cluster_xsq(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 
 cluster_xsq <- function (cacc_matrix) {
 

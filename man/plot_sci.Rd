@@ -7,7 +7,7 @@
 plot_sci(cacc_matrix)
 }
 \arguments{
-\item{cacc_matrix}{A tibble. The output from the \code{cacc} function.}
+\item{cacc_matrix}{A tibble. The output of the \code{cacc} function.}
 }
 \value{
 Returns a ggplot object.
@@ -16,5 +16,5 @@ Returns a ggplot object.
 Plots a Lorenz Curve for the Situational Clustering Index (SCI) to visualize the magnitude of the clustering of observations among dominant profiles in a \code{cacc_matrix}.
 }
 \examples{
-plot_sci(cacc(data = test_data, x = c(iv1, iv2, iv3, iv4), y = dv1))
+plot_sci(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 }
