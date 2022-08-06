@@ -11,6 +11,8 @@
 #' @importFrom rlang .data
 #' @export
 #'
+#' @references Miethe, T. D., Hart, T. C., & Regoeczi, W. C. (2008). The Conjunctive Analysis of Case Configurations: An Exploratory Method for Discrete Multivariate Analyses of Crime Data. *Journal of Quantitative Criminology, 24*, 227–241. https://doi.org/10.1007/s10940-008-9044-8
+#'
 #' @examples
 #' cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1)
 #' cacc(data = test_data, ivs = c(iv1_c, iv2_c, iv3_c, iv4_c), dv = dv1)

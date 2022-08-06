@@ -18,3 +18,6 @@ Plots a Lorenz Curve for the Situational Clustering Index (SCI) to visualize the
 \examples{
 plot_sci(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 }
+\references{
+Hart, T. C. (2019). Identifying Situational Clustering and Quantifying Its Magnitude in Dominant Case Configurations: New Methods for Conjunctive Analysis. \emph{Crime & Delinquency, 66}(1), 143-159.
+}

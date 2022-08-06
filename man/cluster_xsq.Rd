@@ -18,3 +18,6 @@ Computes a Chi-Square Goodness-of-Fit Test to determine whether there is statist
 \examples{
 cluster_xsq(cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1))
 }
+\references{
+Hart, T. C. (2019). Identifying Situational Clustering and Quantifying Its Magnitude in Dominant Case Configurations: New Methods for Conjunctive Analysis. \emph{Crime & Delinquency, 66}(1), 143-159. https://doi.org/10.1177/0011128719866123
+}

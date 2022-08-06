@@ -26,3 +26,6 @@ main_effect(
   value = 0
 )
 }
+\references{
+Hart, T. C., Rennison, C. M., & Miethe, T. D. (2017). Identifying Patterns of Situational Clustering and Contextual Variability in Criminological Data: An Overview of Conjunctive Analysis of  Case  Configurations. \emph{Journal  of  Contemporary Criminal  Justice, 33}(2),  112–120. https://doi.org/10.1177/1043986216689746
+}
