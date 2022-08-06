@@ -14,7 +14,7 @@ main_effect(cacc_matrix, variable, value)
 \item{value}{A single numeric or character value the \code{variable} specified can take.}
 }
 \value{
-Returns a numeric vector, ranging from 0 to 1, containing the main effect of the \code{value} of the selected \code{variable} on the probability of outcome.
+Returns a tibble containing a single numeric variable, ranging from 0 to 1, containing the main effects of the \code{value} of the selected \code{variable} on the probability of outcome.
 }
 \description{
 Computes the main effect that a specific value of a variable produces on the outcome probability in a \code{cacc_matrix}.

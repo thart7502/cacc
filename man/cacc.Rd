@@ -22,4 +22,7 @@ Computes a Conjunctive Analysis of Case Configurations (CACC).
 \examples{
 cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1)
 cacc(data = test_data, ivs = c(iv1_c, iv2_c, iv3_c, iv4_c), dv = dv1)
+
+# Syntax with the native R pipe
+test_data |> cacc(ivs = c(iv1, iv2, iv3, iv4), dv = dv1)
 }

@@ -6,7 +6,7 @@
 #' @param variable A single variable name contained in a `cacc_matrix`.
 #' @param value A single numeric or character value the `variable` specified can take.
 #'
-#' @return Returns a numeric vector, ranging from 0 to 1, containing the main effect of the `value` of the selected `variable` on the probability of outcome.
+#' @return Returns a tibble containing a single numeric variable, ranging from 0 to 1, containing the main effects of the `value` of the selected `variable` on the probability of outcome.
 #'
 #' @export
 #'
@@ -19,6 +19,7 @@
 
 main_effect <- function (cacc_matrix, variable, value) {
 
+  # Calculate the main effect ----
   cacc_effect <- cacc_matrix |>
     dplyr::group_by(dplyr::across(-c({{ variable }}, .data$freq, .data$p))) |>
     dplyr::filter(dplyr::n() > 1) |>
@@ -28,8 +29,9 @@ main_effect <- function (cacc_matrix, variable, value) {
       true = NA_real_,
       false = .data$p - dplyr::nth(.data$p, which({{ variable }} == value))
     )) |>
+    dplyr::ungroup() |>
     tidyr::drop_na()
 
-  return (cacc_effect |> dplyr::pull(.data$effect))
+  return (cacc_effect |> dplyr::select(.data$effect))
 
 }
