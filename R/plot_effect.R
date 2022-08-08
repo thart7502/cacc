@@ -7,6 +7,8 @@
 #' @param value A single numeric or character value the `iv` specified can take.
 #'
 #' @return Returns a ggplot object.
+#'
+#' @importFrom rlang :=
 #' @export
 #'
 #' @references Hart, T. C., Rennison, C. M., & Miethe, T. D. (2017). Identifying Patterns of Situational Clustering and Contextual Variability in Criminological Data: An Overview of Conjunctive Analysis of  Case  Configurations. *Journal  of  Contemporary Criminal  Justice, 33*(2),  112–120. https://doi.org/10.1177/1043986216689746
@@ -17,7 +19,7 @@
 #'   iv = iv4,
 #'   value = 0
 #' )
-#'
+
 plot_effect <- function (cacc_matrix, iv, value) {
 
   # Calculate the main effect ----
@@ -25,7 +27,7 @@ plot_effect <- function (cacc_matrix, iv, value) {
     dplyr::group_by(dplyr::across(-c({{ iv }}, .data$freq, .data$p))) |>
     dplyr::filter(dplyr::n() > 1) |>
     dplyr::arrange({{ iv }}, .by_group = TRUE) |>
-    dplyr::mutate(effect = dplyr::if_else(
+    dplyr::mutate({{ iv }} := dplyr::if_else(
       condition = {{ iv }} == value,
       true = NA_real_,
       false = .data$p - dplyr::nth(.data$p, which({{ iv }} == value))
@@ -39,18 +41,18 @@ plot_effect <- function (cacc_matrix, iv, value) {
   summary_stats <- cacc_effect |>
     dplyr::summarise(
       mean_ = round(
-        x = mean(.data$effect),
+        x = mean({{ iv }}),
         digits = 3
       ),
       sd_ = round(
-        x = stats::sd(.data$effect),
+        x = stats::sd({{ iv }}),
         digits = 3
       )
     )
 
   # Produce a distribution plot
   cacc_effect |>
-    ggplot2::ggplot(mapping = ggplot2::aes(x = .data$effect)) +
+    ggplot2::ggplot(mapping = ggplot2::aes(x = {{ iv }})) +
     ggplot2::geom_density(
       fill = "grey",
       alpha = .5
@@ -76,7 +78,7 @@ plot_effect <- function (cacc_matrix, iv, value) {
     ) +
     ggplot2::labs(
       x = "Main effect",
-      y = NULL
+      y = rlang::as_label(rlang::enquo(iv))
     )
 
 }
