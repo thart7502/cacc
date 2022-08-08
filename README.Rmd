@@ -61,6 +61,9 @@ cacc_matrix |> cluster_xsq()
 ```
 
 ```{r sci}
+#| out.width: "50%"
+#| out.heigth: "50%"
+
 # Compute a Situational Clustering Index (SCI)
 cacc_matrix |> cluster_sci()
 
@@ -71,6 +74,9 @@ cacc_matrix |> plot_sci()
 ### Main Effects
 
 ```{r effect}
+#| out.width: "50%"
+#| out.heigth: "50%"
+
 # Compute the main effects for a specific variable value
 cacc_matrix |> 
   main_effect(

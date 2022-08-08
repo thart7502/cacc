@@ -78,7 +78,7 @@ plot_effect <- function (cacc_matrix, iv, value) {
     ) +
     ggplot2::labs(
       x = "Main effect",
-      y = rlang::as_label(rlang::enquo(iv))
+      y = paste0(rlang::as_label(rlang::enquo(iv)), "; ", rlang::as_label(rlang::enquo(value)))
     )
 
 }
