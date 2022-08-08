@@ -4,17 +4,17 @@
 \alias{main_effect}
 \title{Main effect}
 \usage{
-main_effect(cacc_matrix, variable, value)
+main_effect(cacc_matrix, iv, value)
 }
 \arguments{
 \item{cacc_matrix}{A tibble. The output of the \code{cacc} function.}
 
-\item{variable}{A single variable name contained in a \code{cacc_matrix}.}
+\item{iv}{A single variable name contained in a \code{cacc_matrix}.}
 
-\item{value}{A single numeric or character value the \code{variable} specified can take.}
+\item{value}{A single numeric or character value the \code{iv} specified can take.}
 }
 \value{
-Returns a tibble containing a single numeric variable, ranging from 0 to 1, containing the main effects of the \code{value} of the selected \code{variable} on the probability of outcome.
+Returns a tibble containing a single numeric variable, ranging from 0 to 1, containing the main effects of the \code{value} of the selected \code{iv} on the probability of outcome.
 }
 \description{
 Computes the main effect that a specific value of a variable produces on the outcome probability in a \code{cacc_matrix}.
@@ -22,7 +22,7 @@ Computes the main effect that a specific value of a variable produces on the out
 \examples{
 main_effect(
   cacc_matrix = cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1),
-  variable = iv4,
+  iv = iv4,
   value = 0
 )
 }

@@ -4,14 +4,14 @@
 \alias{plot_effect}
 \title{Density Plot for the Main Effect}
 \usage{
-plot_effect(cacc_matrix, variable, value)
+plot_effect(cacc_matrix, iv, value)
 }
 \arguments{
 \item{cacc_matrix}{A tibble. The output of the \code{cacc} function.}
 
-\item{variable}{A single variable name contained in a \code{cacc_matrix}.}
+\item{iv}{A single variable name contained in a \code{cacc_matrix}.}
 
-\item{value}{A single numeric or character value the \code{variable} specified can take.}
+\item{value}{A single numeric or character value the \code{iv} specified can take.}
 }
 \value{
 Returns a ggplot object.
@@ -22,7 +22,7 @@ Plots an annotated boxplot and kernel density estimate to visualize the distribu
 \examples{
 plot_effect(
   cacc_matrix = cacc(data = test_data, ivs = c(iv1, iv2, iv3, iv4), dv = dv1),
-  variable = iv4,
+  iv = iv4,
   value = 0
 )
 
