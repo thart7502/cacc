@@ -82,7 +82,7 @@ cacc_matrix |> cluster_sci()
 cacc_matrix |> plot_sci()
 ```
 
-<img src="man/figures/README-sci-1.png" width="50%" />
+<img src="man/figures/README-sci-1.png" width="100%" />
 
 ### Main Effects
 
@@ -108,7 +108,7 @@ cacc_matrix |>
   )
 ```
 
-<img src="man/figures/README-effect-1.png" width="50%" />
+<img src="man/figures/README-effect-1.png" width="100%" />
 
 ## References
 
