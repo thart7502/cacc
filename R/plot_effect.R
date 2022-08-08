@@ -71,8 +71,8 @@ plot_effect <- function (cacc_matrix, iv, value) {
       hjust = c(0, 0),
       vjust = c(1.5, 3.5),
       label = c(
-        paste("italic(M) ==", summary_stats |> dplyr::pull(.data$mean_)),
-        paste("italic(SD) ==", summary_stats |> dplyr::pull(.data$sd_))
+        paste("italic(M) ==", summary_stats |> dplyr::pull(.data$mean)),
+        paste("italic(SD) ==", summary_stats |> dplyr::pull(.data$sd))
       ),
       parse = TRUE
     ) +
