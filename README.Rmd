@@ -33,8 +33,63 @@ if (!require("devtools")) install.package("devtools")
 devtools::install_github("amoneva/cacc")
 ```
 
+## Examples
+
+```{r load}
+library(cacc)
+```
+
+### CACC
+
+```{r cacc}
+# Calculate the CACC matrix
+cacc_matrix <- test_data |> 
+  cacc(
+    ivs = c(iv1, iv2, iv3, iv4), 
+    dv = dv1
+  )
+
+# Look at the first few rows
+cacc_matrix |> head()
+```
+
+### Situational Clustering Tests
+
+```{r chi}
+# Compute a Chi-Square Goodness-of-Fit Test
+cacc_matrix |> cluster_xsq()
+```
+
+```{r sci}
+# Compute a Situational Clustering Index (SCI)
+cacc_matrix |> cluster_sci()
+
+# Plot a Lorenz Curve to visualize the SCI
+cacc_matrix |> plot_sci()
+```
+
+### Main Effects
+
+```{r effect}
+# Compute the main effects for a specific variable value
+cacc_matrix |> 
+  main_effect(
+    iv = iv4,
+    value = 0,
+    # Set to `FALSE` for a numeric vector of effects
+    summary = TRUE
+  )
+
+# Plot the distribution of the main effect
+cacc_matrix |> 
+  plot_effect(
+    iv = iv4,
+    value = 0
+  )
+```
+
 ## References
 
--   Hart, T. C. (2019). Identifying Situational Clustering and Quantifying Its Magnitude in Dominant Case Configurations: New Methods for Conjunctive Analysis. *Crime & Delinquency, 66*(1), 143-159.
+-   Hart, T. C. (2019). Identifying Situational Clustering and Quantifying Its Magnitude in Dominant Case Configurations: New Methods for Conjunctive Analysis. *Crime & Delinquency, 66*(1), 143-159. https://doi.org/10.1177/0011128719866123
 -   Hart, T. C., Rennison, C. M., & Miethe, T. D. (2017). Identifying Patterns of Situational Clustering and Contextual Variability in Criminological Data: An Overview of Conjunctive Analysis of  Case  Configurations. *Journal  of  Contemporary Criminal  Justice, 33*(2),  112–120. https://doi.org/10.1177/1043986216689746
 -   Miethe, T. D., Hart, T. C., & Regoeczi, W. C. (2008). The Conjunctive Analysis of Case Configurations: An Exploratory Method for Discrete Multivariate Analyses of Crime Data. *Journal of Quantitative Criminology, 24*, 227–241. https://doi.org/10.1007/s10940-008-9044-8
