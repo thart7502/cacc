@@ -40,11 +40,11 @@ plot_effect <- function (cacc_matrix, iv, value) {
   # Declare the summary stats
   summary_stats <- cacc_effect |>
     dplyr::summarise(
-      mean_ = round(
+      mean = round(
         x = mean({{ iv }}),
         digits = 3
       ),
-      sd_ = round(
+      sd = round(
         x = stats::sd({{ iv }}),
         digits = 3
       )

@@ -5,8 +5,9 @@
 #' @param cacc_matrix A tibble. The output of the `cacc` function.
 #' @param iv A single variable name contained in a `cacc_matrix`.
 #' @param value A single numeric or character value the `iv` specified can take.
+#' @param summary Logical. Defaults to `TRUE`. Whether or not to return the summary statistics for the main effect.
 #'
-#' @return Returns a tibble containing a single numeric variable, ranging from 0 to 1, containing the main effects of the `value` of the selected `iv` on the probability of outcome.
+#' @return When `summary = TRUE`, returns a tibble with summary stats for the main effect. If `summary = FALSE`, returns a tibble containing a single numeric variable, ranging from 0 to 1, containing the main effects of the `value` of the selected `iv` on the probability of outcome.
 #'
 #' @export
 #'
@@ -19,7 +20,7 @@
 #'   value = 0
 #' )
 
-main_effect <- function (cacc_matrix, iv, value) {
+main_effect <- function (cacc_matrix, iv, value, summary = TRUE) {
 
   # Calculate the main effect ----
   cacc_effect <- cacc_matrix |>
@@ -34,6 +35,39 @@ main_effect <- function (cacc_matrix, iv, value) {
     dplyr::ungroup() |>
     tidyr::drop_na()
 
-  return (cacc_effect |> dplyr::select(.data$effect))
+  # TEST ----
+  if ({{ summary }} == TRUE) {
+
+    return (
+      cacc_effect |>
+        dplyr::summarise(
+          median = round(
+            x = stats::median(.data$effect),
+            digits = 3
+          ),
+          mean = round(
+            x = mean(.data$effect),
+            digits = 3
+          ),
+          sd = round(
+            x = stats::sd(.data$effect),
+            digits = 3
+          ),
+          min = round(
+            x = min(.data$effect),
+            digits = 3
+          ),
+          max = round(
+            x = max(.data$effect),
+            digits = 3
+          )
+        )
+    )
+
+  } else {
+
+    return (cacc_effect |> dplyr::select(.data$effect))
+
+  }
 
 }
