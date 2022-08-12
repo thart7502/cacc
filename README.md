@@ -1,6 +1,12 @@
 
 # `cacc`: Conjunctive Analysis of Case Configurations
 
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 An R Package to compute Conjunctive Analysis of Case Configurations
 (CACC), Situational Clustering Tests, and Main Effects
 
