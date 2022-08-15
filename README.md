@@ -10,7 +10,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 An R Package to compute Conjunctive Analysis of Case Configurations
 (CACC), Situational Clustering Tests, and Main Effects
 
-## Description
+## Overview
 
 This package contains a set of functions to conduct Conjunctive Analysis
 of Case Configurations (CACC) (Miethe, Hart & Regoeczi, 2008), to
