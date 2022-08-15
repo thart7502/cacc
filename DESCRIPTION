@@ -2,7 +2,11 @@ Package: cacc
 Title: Conjunctive Analysis of Case Configurations
 Version: 0.0.0.9000
 Date: 2022
-Authors@R: c(person(given = "Asier", family = "Moneva", email = "amoneva@nscr.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-2156-0213")), person(given = "Miriam", family = "Esteve", email = "miriam.estevec@umh.es", role = "aut"), person(given = "Timothy", family = "Hart", middle = "C.", email = "thart@ut.edu", role = "aut"))
+Authors@R: c(
+    person(given = "Asier", family = "Moneva", email = "amoneva@nscr.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-2156-0213")), 
+    person(given = "Miriam", family = "Esteve", email = "miriam.estevec@umh.es", role = "aut"), 
+    person(given = "Timothy C.", family = "Hart", email = "thart@ut.edu", role = "aut")
+    )
 Description: This R package contains a set of functions for conducting Conjunctive Analysis of Case Configurations (CACC) (Miethe, Hart, & Regoeczi, 2008) and for identifying and quantifying situational clustering in dominant case configurations (Hart, 2019). Initially conceived as an exploratory technique for multivariate analysis of categorical data, CACC has developed to include formal statistical tests that can be applied in a wide variety of contexts. This technique allows examining composite profiles of different units of analysis in an alternative way to variable-oriented methods.
 License: MIT + file LICENSE
 Encoding: UTF-8
