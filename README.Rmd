@@ -17,11 +17,11 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-An R Package to compute Conjunctive Analysis of Case Configurations (CACC), Situational Clustering Tests, and Main Effects
+An R Package to compute Conjunctive Analysis of Case Configurations (CACC), Situational Clustering Tests, and Visual Displays of Main Effects
 
 ## Description
 
-This package contains a set of functions to conduct Conjunctive Analysis of Case Configurations (CACC) (Miethe, Hart & Regoeczi, 2008), to identify and quantify situational clustering in dominant case configurations (Hart, 2019), and to determine the main effects of specific variable values on the probabilities of outcome (Hart, Rennison & Miethe, 2017). Initially conceived as an exploratory technique for multivariate analysis of categorical data, CACC has developed to include formal statistical tests that can be applied in a wide variety of contexts. This technique allows examining composite profiles of different units of analysis in an alternative way to variable-oriented methods.
+This package contains a set of functions to conduct Conjunctive Analysis of Case Configurations (CACC) (Miethe, Hart & Regoeczi, 2008), to identify and quantify situational clustering in dominant case configurations (Hart, 2019), and to visually display the main effects of individual variables on the probability of an outcome (Hart, Rennison & Miethe, 2017). Initially conceived as an exploratory technique for multivariate analysis of categorical data, CACC has developed to include formal statistical tests that can be applied in a wide variety of contexts. This technique allows examining composite profiles, which serve as the unit of analysis, as an alternative to variable-oriented analytic methods.
 
 ## Installation
 
